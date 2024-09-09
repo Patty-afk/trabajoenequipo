@@ -156,3 +156,43 @@ ganaste = """
 ---------------------------------------------------------------------------------------------------------------
 
 """
+
+menu = """
+Elige una opcion:
+
+1.- Ingresa una palabra
+2.- Juega con una palabra aleatoria
+3.- Salir
+"""
+import random
+import os
+
+
+def adivina(palabra_adiv,palabra):
+    vidas = 1 
+    usadas = []
+    while vidas<7 :
+        os.system("cls")
+        print("Adivina la palabra: ")
+        print("".join(palabra_adiv))
+        print("Las letras usadas son: ")
+        print(usadas)
+        imagen = imagenes[vidas - 1]
+        print(imagen)
+        print("Tienes " + str((7-vidas)) + " vidas")
+        letra = input("Ingresa una letra: ") 
+
+        # for i in range(1,7):  
+        #     imagen = imagenes[i]
+        #     if vidas == i :
+        #         print(imagen)
+        
+        condicion = False
+        while condicion == False:    
+            if len(letra)>1:
+                print("Ingresa una sola letra: ")
+                letra = input("Ingresa una letra: ")
+                if len(letra) == 1:
+                    condicion = True
+            else:
+                break
