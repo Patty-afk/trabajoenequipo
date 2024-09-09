@@ -196,3 +196,55 @@ def adivina(palabra_adiv,palabra):
                     condicion = True
             else:
                 break
+                        
+        
+        letra_in = False
+        for i in range(len(palabra_adiv)):
+            if letra == palabra[i]:
+                palabra_adiv[i] = letra
+                letra_in = True
+        if not letra_in:
+            vidas += 1
+            usadas.append(letra)
+        
+        # for i in range(len(palabra_adiv)):
+        #     if letra == palabra[i]:
+        #         palabra_adiv[i] = letra
+        #     #     letra_in = True
+        #     # elif not letra_in: 
+        #     #     vidas += 1
+        #     #     usadas.append(letra)
+        #     if i == len(palabra_adiv) - 1 and letra != palabra[i]: #entra al ciclo aun de verificar la letra
+        #         vidas +=1
+        #         usadas.append(letra)
+                                        
+                    
+        
+        if "".join(palabra_adiv) == palabra:
+            print(ganaste)
+            print("La palabra era: " + palabra)
+            break
+        if vidas == 7 :
+            print(game_over)
+            print("La palabra era: " + palabra)
+                                   
+
+def run():
+    print(logo)
+    while True:
+        print(menu)
+        opcion = input()
+        
+        try:
+            opcion = int(opcion)    
+            if opcion == 3:
+                break
+        except:
+            print("Tipo de dato incorrecto")
+        
+        opcion = int(opcion)
+        
+        if opcion == 1 :
+            palabra = input("Ingresa una palabra: ")
+            os.system('cls') 
+           
