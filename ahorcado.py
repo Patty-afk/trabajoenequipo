@@ -248,3 +248,21 @@ def run():
             palabra = input("Ingresa una palabra: ")
             os.system('cls') 
            
+            palabra = palabra.lower()
+            palabra_list = ["_"]*len(palabra)
+            print("".join(palabra_list))
+            adivina(palabra_list,palabra)
+            
+        if opcion == 2:
+            palabra = ""
+            with open("Proyecto\data.txt" , "r", encoding="utf-8") as f:
+                iterables = f.readlines()
+                palabra = random.choice(iterables).strip()
+                    
+        
+            palabra_list = ["_"]*len(palabra)  
+            adivina(palabra_list,palabra)
+        
+
+if __name__ == "__main__":
+    run()
